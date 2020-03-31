@@ -1,0 +1,28 @@
+<h3>Titulares</h3>
+
+<div class="container row mt-3 text-center">
+  
+  <div class="card col-md-2 m-2" 
+  style="width: 16rem;" *ngFor="let hero of heroes"
+  routerLink="/detail/{{hero.id}}">
+
+  <div class="card-img-top">
+  <img src="{{hero.foto}}" class="text-center" 
+  style="width:100px; height: 100px; display:center; display:center" alt="...">
+</div>
+
+    <div class="card-body text-center">
+      <h4 class="text-center">{{hero.name}}</h4>
+      <span class="text-center">{{hero.id}}</span>
+    </div>
+  
+  </div>  
+
+
+</div>
+
+
+
+<app-alineacion></app-alineacion>
+
+<app-hero-search></app-hero-search>

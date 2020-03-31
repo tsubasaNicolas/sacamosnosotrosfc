@@ -1,0 +1,27 @@
+
+ <div class="container">
+<div id="search-component">
+ 
+    <h4><label for="search-box">Buscar Player</label></h4>
+  
+  
+    <form class="form-inline">
+      <input #searchBox id="search-box" 
+      class="form-control mr-sm-2" 
+      (input)="search(searchBox.value)" 
+      type="search" 
+      placeholder="Player" aria-label="Search">
+      
+      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Buscar</button>
+    </form>
+
+    <ul class="search-result">
+      <li *ngFor="let hero of heroes$ | async" >
+        <a routerLink="/detail/{{hero.id}}">
+          {{hero.name}}
+        </a>
+      </li>
+    </ul>
+  </div>
+
+</div>

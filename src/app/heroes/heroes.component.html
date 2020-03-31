@@ -1,0 +1,32 @@
+
+
+<h2>El Equipo Especial</h2>
+
+<div class="input-group mb-3">
+  <input #heroName type="text" class="form-control" placeholder="Agregar Player" aria-label="Recipient's username" aria-describedby="button-addon2">
+  <div class="input-group-append">
+    <button class="btn btn-outline-success" (click)="add(heroName.value); heroName.value=''" type="button" id="button-addon2">Agregar</button>
+  </div>
+</div>
+
+
+  <ul class="list-group">
+    <li  *ngFor="let hero of heroes" class="list-group-item d-flex justify-content-between align-items-center m-2">
+      <a routerLink="/detail/{{hero.id}}" >
+      <img src="{{hero.foto}}" class="card-img-top rounded mx-2" 
+      style="width:60px; height: 60px;"
+       alt="...">
+       {{hero.name}}
+    </a>  
+
+      <span class="badge badge-primary badge-pill">{{hero.id}}</span>
+
+      <button class="btn btn-danger btn-sm" title="delete hero"
+      (click)="delete(hero)">X</button>
+      
+    </li>
+   
+  </ul>
+
+ 
+<!--<app-hero-detail [hero]="selectedHero"></app-hero-detail>-->

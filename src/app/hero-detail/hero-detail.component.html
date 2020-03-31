@@ -1,0 +1,33 @@
+
+<div class="container mt-3">
+<div class="col-md-6" *ngIf="hero">
+<div class="card">
+  
+  
+  <div class="card-title bg-dark text-center">
+   
+    <h3 class="text-white text-center mx-2">{{hero.name | uppercase}}</h3>
+    
+    <img src="{{hero.foto}}" class="card-img-top" style="width:200px; height: 200px;" alt="...">
+    <h2 class="text-warning text-center">Performance</h2>
+    <h3 class="text-success text-center mx-2">{{hero.id}}</h3>
+  </div>
+  <div class="card-body">
+    <div>
+      <label>Nombre:
+        <input [(ngModel)]="hero.name" placeholder="name"/>
+      </label>
+    </div>
+  
+  </div>
+  <div class="card-footer">
+
+    <button (click)="save()" class="btn btn-success btn-block my-2">Guardar</button>
+    
+    <button (click)="goBack()" class="btn btn-secondary">Volver</button>
+  </div>
+</div>
+
+</div>
+
+</div>
